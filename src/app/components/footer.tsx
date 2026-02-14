@@ -20,7 +20,7 @@ export function Footer() {
                 <h3 class="text-white font-semibold">3. Third-Party Services</h3>
                 <p>We use Google Firebase, Google Gemini AI, and RevenueCat for secure infrastructure.</p>
                 <h3 class="text-white font-semibold">4. Account Deletion</h3>
-                <p>Users can delete all data via 'Settings > Delete Account' within the app.</p>
+                <p>Users can delete all data via 'Settings &gt; Delete Account' within the app.</p>
             </div>
         </div>
 
