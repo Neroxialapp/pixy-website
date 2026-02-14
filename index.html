@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixy AI Labs | Smart Parenting, Powered by AI</title>
+    <meta name="description" content="Next-generation AI parenting assistant. Track sleep, feeding, and growth routines with intelligent insights. Developed by Pixy AI Labs.">
+    <link rel="icon" type="image/png" href="https://pixykid.com/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* Özel AI Glow Efekti */
+        .bg-glow-mesh {
+            background-color: #020617; /* Very dark slate */
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,90%,65%,0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(199,89%,65%,0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, hsla(275,90%,65%,0.1) 0px, transparent 50%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #38bdf8, #a855f7, #38bdf8);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 5s linear infinite;
+        }
+        @keyframes gradient { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+    </style>
+</head>
+<body class="bg-glow-mesh text-slate-300 antialiased overflow-x-hidden">
+
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+            <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9H9.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 9H15.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Pixy<span class="text-blue-500">.</span>
+        </div>
+        <div class="flex items-center gap-6 font-medium">
+             <a href="#features" class="hidden md:block hover:text-white transition">Features</a>
+             <a href="#privacy" class="hidden md:block hover:text-white transition">Privacy</a>
+            <a href="mailto:support@pixykid.com" class="px-5 py-2.5 text-sm bg-slate-800/50 hover:bg-slate-800 border border-slate-700 rounded-full text-white transition focus:ring-4 focus:ring-blue-500/20">Support Hub</a>
+        </div>
+    </nav>
+
+    <header class="container mx-auto px-6 py-16 md:py-24 lg:py-32 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                    </span>
+                    AI Labs Initiative
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight text-white">
+                    Redefining Parenting with <br>
+                    <span class="text-gradient">Intelligent AI.</span>
+                </h1>
+                <p class="text-lg lg:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                    Pixy isn't just a tracker; it's your proactive parenting partner. Turn chaotic routines into data-driven insights with the power of advanced AI.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="#" class="group relative inline-flex items-center justify-center gap-3 bg-white px-8 py-4 rounded-full text-slate-900 font-bold overflow-hidden transition-all hover:bg-blue-50 hover:scale-105 focus:ring-4 focus:ring-blue-500/50">
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.98 2.98 0 01-.68-.352l-.025-.017a3.024 3.024 0 01-.586-2.197V4.38c0-.825.228-1.52.586-2.197.06-.113.125-.218.196-.316.03-.042.062-.083.094-.122a2.98 2.98 0 01.414-.332zM15.42 13.626l5.736 3.235c.677.382 1.22.25 1.542-.14.19-.23.282-.572.282-1.02V8.3c0-.448-.092-.79-.282-1.02-.322-.39-.865-.522-1.542-.14l-5.736 3.234L14.07 12l1.35 1.626z"/></svg>
+                        <span>Get it on <span class="block text-xs font-normal text-slate-500">Google Play</span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="relative hidden lg:block">
+                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px] -z-10"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[100px] -z-10"></div>
+                
+                <svg class="w-full h-auto drop-shadow-2xl animate-[pulse_4s_ease-in-out_infinite]" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.8">
+                    <circle cx="250" cy="250" r="200" stroke="url(#paint0_linear)" stroke-width="2" stroke-dasharray="10 10"/>
+                    <circle cx="250" cy="250" r="150" stroke="url(#paint1_linear)" stroke-width="2" stroke-dasharray="5 5"/>
+                    <path d="M250 50V450" stroke="url(#paint2_linear)" stroke-width="2"/>
+                    <path d="M50 250H450" stroke="url(#paint3_linear)" stroke-width="2"/>
+                    <circle cx="250" cy="50" r="8" fill="#60A5FA"><animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite" /></circle>
+                    <circle cx="450" cy="250" r="8" fill="#A78BFA"><animate attributeName="r" values="8;12;8" dur="3s" begin="1s" repeatCount="indefinite" /></circle>
+                    <circle cx="250" cy="450" r="8" fill="#60A5FA"><animate attributeName="r" values="8;12;8" dur="3s" begin="2s" repeatCount="indefinite" /></circle>
+                    <circle cx="50" cy="250" r="8" fill="#A78BFA"><animate attributeName="r" values="8;12;8" dur="3s" begin="0.5s" repeatCount="indefinite" /></circle>
+                    <circle cx="250" cy="250" r="40" fill="url(#paint4_radial)" />
+                    <circle cx="250" cy="250" r="20" fill="white" />
+                    </g>
+                    <defs>
+                    <linearGradient id="paint0_linear" x1="250" y1="50" x2="250" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#60A5FA" stop-opacity="0"/><stop offset="0.5" stop-color="#60A5FA"/><stop offset="1" stop-color="#60A5FA" stop-opacity="0"/></linearGradient>
+                    <linearGradient id="paint1_linear" x1="250" y1="100" x2="250" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA" stop-opacity="0"/><stop offset="0.5" stop-color="#A78BFA"/><stop offset="1" stop-color="#A78BFA" stop-opacity="0"/></linearGradient>
+                    <linearGradient id="paint2_linear" x1="250" y1="50" x2="250" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6" stop-opacity="0"/><stop offset="0.5" stop-color="#3B82F6"/><stop offset="1" stop-color="#3B82F6" stop-opacity="0"/></linearGradient>
+                    <linearGradient id="paint3_linear" x1="50" y1="250" x2="450" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#8B5CF6" stop-opacity="0"/><stop offset="0.5" stop-color="#8B5CF6"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient>
+                    <radialGradient id="paint4_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 250) rotate(90) scale(40)"><stop stop-color="white"/><stop offset="1" stop-color="#3B82F6"/></radialGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="container mx-auto px-6 py-24 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Intelligence meets Intuition.</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Experience the next generation of baby tracking, powered by sophisticated AI algorithms designed for parents.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 bg-slate-800/40 border border-slate-700/50 rounded-3xl hover:bg-slate-800/60 transition group">
+                <div class="w-14 h-14 mb-6 bg-blue-500/20 flex items-center justify-center rounded-2xl group-hover:scale-110 transition">
+                    <svg class="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">AI Sleep Engine</h3>
+                <p class="text-slate-400 leading-relaxed">Predicts the perfect "sweet spots" for naps using machine learning based on your baby's unique patterns.</p>
+            </div>
+            <div class="p-8 bg-slate-800/40 border border-slate-700/50 rounded-3xl hover:bg-slate-800/60 transition group">
+                 <div class="w-14 h-14 mb-6 bg-purple-500/20 flex items-center justify-center rounded-2xl group-hover:scale-110 transition">
+                     <svg class="w-7 h-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Smart Routine Log</h3>
+                <p class="text-slate-400 leading-relaxed">Effortlessly track breastfeeding, bottles, and solids. Get insights on growth trends instantly.</p>
+            </div>
+            <div class="p-8 bg-slate-800/40 border border-slate-700/50 rounded-3xl hover:bg-slate-800/60 transition group">
+                 <div class="w-14 h-14 mb-6 bg-blue-500/20 flex items-center justify-center rounded-2xl group-hover:scale-110 transition">
+                    <svg class="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Generative AI Tales</h3>
+                <p class="text-slate-400 leading-relaxed">Create personalized bedtime stories and custom baby recipes powered by advanced LLMs.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800/80 bg-slate-900/50 py-16 text-center relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="mb-8">
+                <div class="text-2xl font-bold text-white mb-2">Pixy AI Labs.</div>
+                <p class="text-slate-500 text-sm">Building the future of parenting technology.</p>
+            </div>
+            <div class="flex justify-center gap-6 mb-12 text-sm font-medium">
+                <a href="#" class="text-slate-400 hover:text-white transition">Terms of Service</a>
+                <a href="#privacy" class="text-slate-400 hover:text-white transition">Privacy Policy</a>
+                <a href="mailto:support@pixykid.com" class="text-slate-400 hover:text-white transition">Contact Us</a>
+            </div>
+            <div class="text-slate-600 text-xs">
+                &copy; 2026 Pixy AI Labs. All rights reserved.
+            </div>
+            
+            <div id="privacy" class="mt-24 text-left max-w-3xl mx-auto p-8 bg-slate-800/30 rounded-3xl border border-slate-700/30 scroll-mt-24">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    Privacy Policy
+                </h2>
+                <div class="space-y-4 text-slate-400 text-sm leading-relaxed">
+                    <p class="text-sm text-slate-500">Last updated: February 2024</p>
+                    <p><strong>1. Introduction:</strong> Pixy AI Labs ("we") is committed to protecting the privacy of Pixy users. This policy outlines our data practices.</p>
+                    <p><strong>2. Data Collection:</strong> We do not knowingly collect personally identifiable information from children. User-provided data (logs, routines) is stored securely using industry-standard encryption (e.g., Google Firebase) solely to provide app functionality.</p>
+                    <p><strong>3. AI Features:</strong> Data processed by our AI models for generating stories or insights is anonymized and not used to train public models.</p>
+                    <p><strong>4. Third Parties:</strong> We do not sell, trade, or rent user data to third parties. We may use trusted analytics providers (like Google Analytics for Firebase) to improve app performance.</p>
+                    <p><strong>5. Contact:</strong> For privacy concerns, please contact us at <a href="mailto:support@pixykid.com" class="text-blue-400 hover:underline">support@pixykid.com</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
