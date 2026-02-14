@@ -135,8 +135,8 @@ export function HeroSection() {
               {/* Main image */}
               <div className="relative rounded-3xl overflow-hidden" style={{ border: '2px solid rgba(255, 255, 255, 0.1)' }}>
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1643618511639-d3f8eba7f486?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWJ5JTIwc2xlZXBpbmclMjBwZWFjZWZ1bGx5fGVufDF8fHx8MTc3MTA5MzU0NHww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Peaceful sleeping baby"
+                  src="https://github.com/Neroxialapp/pixy-website/blob/0631ac60f5f5a969a68271541a4696efd53bedde/logo.png?raw=true"
+                  alt="Pixy AI"
                   className="w-full h-auto"
                 />
               </div>
