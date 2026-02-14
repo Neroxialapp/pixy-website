@@ -8,7 +8,7 @@ export function Footer() {
     <section class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
     <div class="container mx-auto px-6 max-w-5xl grid md:grid-cols-2 gap-12">
         
-        <div id="privacy-policy" class="scroll-mt-20">
+        <div id="privacy" class="scroll-mt-20">
             <h2 class="text-2xl font-bold text-white mb-4">Privacy Policy</h2>
             <p class="text-sm mb-4">Last Updated: February 14, 2026</p>
             <div class="space-y-4 text-sm leading-relaxed">
