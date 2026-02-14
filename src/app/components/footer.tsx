@@ -214,5 +214,6 @@ export function Footer() {
       {/* Decorative gradient line at top */}
       <div className="absolute top-0 left-0 w-full h-1" style={{ background: 'linear-gradient(90deg, var(--soft-cyan) 0%, var(--lavender) 50%, var(--soft-cyan) 100%)', opacity: 0.5 }} />
     </footer>
+      </>
   );
 }
