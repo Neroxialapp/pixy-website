@@ -1,17 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="bbZJvELx4EK1fANlppTr-iRQbb7z4dIE0s8L91GLH34" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Pixy : AI Baby & Kid Routine</title>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="google-site-verification" content="bbZJvELx4EK1fANlppTr-iRQbb7z4dIE0s8L91GLH34" />
-      <link rel="icon" type="image/png" href="/favicon.png">
-      <title>Pixy : AI Baby & Kid Routine</title>
-    </head>
+    <link 
+      rel="preload" 
+      href="/PlusJakartaSans-VariableFont_wght.ttf" 
+      as="font" 
+      type="font/ttf" 
+      crossorigin="anonymous"
+    >
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <style>
+      :root {
+        --space-navy: #0a0e27;
+        --soft-cyan: #67E8F9;
+        background-color: #0a0e27;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0a0e27;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      /* Root div için minimum yükseklik vererek zıplamayı engelliyoruz */
+      #root {
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
