@@ -135,8 +135,11 @@ export function HeroSection() {
               {/* Main image */}
               <div className="relative rounded-3xl overflow-hidden" style={{ border: '2px solid rgba(255, 255, 255, 0.1)' }}>
                 <ImageWithFallback
-                  src="https://github.com/Neroxialapp/pixy-website/blob/main/logo.webp?raw=true"
+                  src="/logo.webp"
+                  fetchpriority="high"
                   alt="Pixy AI"
+                  width={600}  // Genişliği manuel belirtmek CLS puanını düzeltir
+                  height={400} // Yüksekliği manuel belirtmek CLS puanını düzeltir
                   className="w-full h-auto"
                 />
               </div>
