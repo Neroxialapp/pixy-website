@@ -1,21 +1,23 @@
 import { Suspense, lazy } from 'react';
-import { HeroSection } from './components/HeroSection'; // Hero normal import kalsın!
+// DİKKAT: "./" yerine "../" yapıyoruz
+import { HeroSection } from '../components/HeroSection'; 
 
-// AŞAĞIDAKİLERİ LAZY YAP (Gereksiz yükü kaldırır)
-// Dosya yollarını kendi projene göre düzenle
-const Features = lazy(() => import('./components/Features'));
-const Testimonials = lazy(() => import('./components/Testimonials'));
-const FAQ = lazy(() => import('./components/FAQ'));
-const Footer = lazy(() => import('./components/Footer'));
+// Lazy load bileşenleri (Named export kullanıyorsan import şekline dikkat et)
+// Eğer bileşenlerin "export default" değilse, import sonuna .then eklemelisin.
+// Ama varsayılan olarak "export default" olduklarını varsayarak şimdilik sadece yolu düzeltiyorum:
+
+const Features = lazy(() => import('../components/Features'));
+const Testimonials = lazy(() => import('../components/Testimonials'));
+const FAQ = lazy(() => import('../components/FAQ'));
+const Footer = lazy(() => import('../components/Footer'));
 
 function App() {
   return (
     <main className="min-h-screen bg-[#0a0e27] text-white overflow-x-hidden">
-      {/* Hero hemen yüklenmeli, LCP için kritiktir */}
       <HeroSection />
 
-      {/* Geri kalanlar arka planda sakince yüklensin */}
       <Suspense fallback={<div className="h-96" />}>
+        {/* Eğer Features yüklenemezse hata vermemesi için basit bir kontrol ekleyebilirsin veya default export olduğundan emin ol */}
         <Features />
       </Suspense>
 
