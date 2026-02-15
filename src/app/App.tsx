@@ -1,19 +1,37 @@
-import { HeroSection } from './components/hero-section';
-import { FeaturesSection } from './components/features-section';
-import { HowItWorksSection } from './components/how-it-works-section';
-import { TestimonialsSection } from './components/testimonials-section';
-import { CTASection } from './components/cta-section';
-import { Footer } from './components/footer';
+import { Suspense, lazy } from 'react';
+import { HeroSection } from './components/HeroSection'; // Hero normal import kalsın!
 
-export default function App() {
+// AŞAĞIDAKİLERİ LAZY YAP (Gereksiz yükü kaldırır)
+// Dosya yollarını kendi projene göre düzenle
+const Features = lazy(() => import('./components/Features'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Footer = lazy(() => import('./components/Footer'));
+
+function App() {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen bg-[#0a0e27] text-white overflow-x-hidden">
+      {/* Hero hemen yüklenmeli, LCP için kritiktir */}
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <TestimonialsSection />
-      <CTASection />
-      <Footer />
-    </div>
+
+      {/* Geri kalanlar arka planda sakince yüklensin */}
+      <Suspense fallback={<div className="h-96" />}>
+        <Features />
+      </Suspense>
+
+      <Suspense fallback={<div className="h-40" />}>
+        <Testimonials />
+      </Suspense>
+      
+      <Suspense fallback={<div className="h-40" />}>
+        <FAQ />
+      </Suspense>
+
+      <Suspense fallback={<div className="h-20" />}>
+        <Footer />
+      </Suspense>
+    </main>
   );
 }
+
+export default App;
