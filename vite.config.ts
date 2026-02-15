@@ -14,13 +14,20 @@ export default defineConfig({
     },
   },
   build: {
+    // Performans İyileştirmeleri
+    cssCodeSplit: true, // CSS'i sayfalara göre böler (Privacy ve Terms sayfaları ana CSS'i yüklemez)
+    cssMinify: 'lightningcss', // Daha hızlı ve verimli CSS sıkıştırma
     rollupOptions: {
       input: {
-        // Ana giriş noktanız
         main: path.resolve(__dirname, 'index.html'),
-        // Eklediğimiz yeni sayfalar
         privacy: path.resolve(__dirname, 'privacy.html'),
         terms: path.resolve(__dirname, 'terms.html'),
+      },
+      output: {
+        // Dosya isimlerini daha düzenli hale getirir
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
       },
     },
   },
