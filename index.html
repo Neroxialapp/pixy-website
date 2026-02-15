@@ -5,17 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="bbZJvELx4EK1fANlppTr-iRQbb7z4dIE0s8L91GLH34" />
     <link rel="icon" type="image/png" href="/favicon.png">
+    
     <title>Pixy : AI Baby & Kid Routine</title>
-    <script>
-      // Bu script, Vite'ın oluşturduğu CSS'i bulur ve onu engellemesiz (non-blocking) hale getirir
-      document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('link[rel="stylesheet"]');
-        links.forEach(link => {
-          link.media = 'print';
-          link.onload = () => { link.media = 'all'; };
-        });
-      });
-    </script>
     <meta name="description" content="Pixy: The smartest AI-powered baby and kid routine tracker. Predict sleep patterns, automate logging, and create magical bedtime experiences with artificial intelligence." />
 
     <link 
@@ -30,24 +21,36 @@
       :root {
         --space-navy: #0a0e27;
         --soft-cyan: #67E8F9;
-        background-color: #0a0e27;
+        background-color: #0a0e27; /* HTML arka planı */
       }
+      
       body {
         margin: 0;
         padding: 0;
         background-color: #0a0e27;
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        color: white; /* Yazı rengini baştan beyaz yapıyoruz */
+        -webkit-font-smoothing: antialiased;
       }
-      /* Root div için minimum yükseklik vererek zıplamayı engelliyoruz */
+
+      /* Root div için düzen kaymasını (CLS) önleyen ayarlar */
       #root {
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        /* Hafif bir fade-in animasyonu, CSS geç yüklenirse titremeyi gizler */
+        opacity: 0;
+        animation: smoothAppear 0.4s ease-out forwards;
+      }
+
+      @keyframes smoothAppear {
+        to { opacity: 1; }
       }
     </style>
   </head>
 
   <body>
     <div id="root"></div>
-    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
