@@ -4,12 +4,21 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0e27 0%, #141B34 50%, #1a1f3a 100%)' }}>
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden" 
+      style={{ 
+        background: 'linear-gradient(135deg, #0a0e27 0%, #141B34 50%, #1a1f3a 100%)',
+        contain: 'paint' // Performans için: Tarayıcıya bu bölümün dışına taşma olmayacağını söyler
+      }}
+    >
       {/* Animated background orbs */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute w-96 h-96 rounded-full blur-3xl opacity-30"
-          style={{ background: 'radial-gradient(circle, var(--soft-cyan) 0%, transparent 70%)' }}
+          style={{ 
+            background: 'radial-gradient(circle, var(--soft-cyan) 0%, transparent 70%)',
+            willChange: 'transform' // GPU hızlandırmasını aktif eder (TBT puanını iyileştirir)
+          }}
           animate={{
             x: [0, 100, 0],
             y: [0, -100, 0],
@@ -24,7 +33,10 @@ export function HeroSection() {
         />
         <motion.div
           className="absolute w-96 h-96 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, var(--lavender) 0%, transparent 70%)' }}
+          style={{ 
+            background: 'radial-gradient(circle, var(--lavender) 0%, transparent 70%)',
+            willChange: 'transform'
+          }}
           animate={{
             x: [0, -100, 0],
             y: [0, 100, 0],
@@ -126,21 +138,24 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative">
-              {/* Glow effect behind image */}
               <div 
-                className="absolute inset-0 rounded-3xl blur-3xl opacity-40"
-                style={{ background: 'linear-gradient(135deg, var(--soft-cyan) 0%, var(--lavender) 100%)', transform: 'scale(0.9)' }}
+                className="absolute inset-0 rounded-3xl blur-3xl opacity-40 pointer-events-none"
+                style={{ 
+                  background: 'linear-gradient(135deg, var(--soft-cyan) 0%, var(--lavender) 100%)', 
+                  transform: 'scale(0.9)',
+                  willChange: 'filter' 
+                }}
               />
               
-              {/* Main image */}
-              <div className="relative rounded-3xl overflow-hidden" style={{ border: '2px solid rgba(255, 255, 255, 0.1)' }}>
+              <div className="relative rounded-3xl overflow-hidden bg-space-navy/20" style={{ border: '2px solid rgba(255, 255, 255, 0.1)' }}>
                 <ImageWithFallback
                   src="/logo.webp"
-                  fetchpriority="high"
+                  fetchpriority="high" // LCP için en kritik ayar
+                  loading="eager"      // Hero görseli olduğu için gecikmesiz yüklenmeli
                   alt="Pixy AI"
-                  width={600}  // Genişliği manuel belirtmek CLS puanını düzeltir
-                  height={400} // Yüksekliği manuel belirtmek CLS puanını düzeltir
-                  className="w-full h-auto"
+                  width={600}          // CLS (Düzen kayması) engelleme
+                  height={400}         // CLS (Düzen kayması) engelleme
+                  className="w-full h-auto object-cover"
                 />
               </div>
 
