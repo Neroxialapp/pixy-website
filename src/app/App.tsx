@@ -1,15 +1,22 @@
 import { Suspense, lazy } from 'react';
-// DİKKAT: "./" yerine "../" yapıyoruz
-import { HeroSection } from '../components/HeroSection'; 
+// DÜZELTME 1: Dosya ismi 'hero-section' olduğu için küçük harfle çağırmalıyız
+// Eğer HeroSection içinde "export default" yoksa süslü parantez {} kalsın.
+import { HeroSection } from '@/components/hero-section';
 
-// Lazy load bileşenleri (Named export kullanıyorsan import şekline dikkat et)
-// Eğer bileşenlerin "export default" değilse, import sonuna .then eklemelisin.
-// Ama varsayılan olarak "export default" olduklarını varsayarak şimdilik sadece yolu düzeltiyorum:
+// DÜZELTME 2: Dosya isimleri 'features-section', 'testimonials-section' şeklinde.
+// Kodda ise sadece 'Features' yazıyordu. Dosya adını tam yazmalıyız.
 
-const Features = lazy(() => import('../components/Features'));
-const Testimonials = lazy(() => import('../components/Testimonials'));
-const FAQ = lazy(() => import('../components/FAQ'));
-const Footer = lazy(() => import('../components/Footer'));
+// ÖNEMLİ NOT: Lazy load kullanırken, çağırdığın dosyaların (Features, Footer vb.)
+// içinde "export default function..." yazdığından emin ol. 
+// Eğer "export function" yazıyorsa lazy load hata verebilir.
+
+const Features = lazy(() => import('@/components/features-section')); 
+const Testimonials = lazy(() => import('@/components/testimonials-section'));
+const Footer = lazy(() => import('@/components/footer'));
+
+// DÜZELTME 3: Listede 'faq.tsx' göremedim. Eğer dosyanın adı 'how-it-works-section.tsx' ise
+// aşağıdaki satırı açıp kullanabilirsin. Şimdilik hata vermemesi için FAQ'yu kaldırdım.
+// const FAQ = lazy(() => import('@/components/how-it-works-section'));
 
 function App() {
   return (
@@ -17,7 +24,8 @@ function App() {
       <HeroSection />
 
       <Suspense fallback={<div className="h-96" />}>
-        {/* Eğer Features yüklenemezse hata vermemesi için basit bir kontrol ekleyebilirsin veya default export olduğundan emin ol */}
+        {/* Component export ismine göre (Features veya FeaturesSection) burası değişebilir */}
+        {/* Şimdilik varsayılan import mantığıyla ilerliyoruz */}
         <Features />
       </Suspense>
 
@@ -25,9 +33,12 @@ function App() {
         <Testimonials />
       </Suspense>
       
-      <Suspense fallback={<div className="h-40" />}>
+      {/* FAQ dosyasını bulamadığım için geçici olarak gizledim, 
+          dosya adını teyit edince açabilirsin */}
+      {/* <Suspense fallback={<div className="h-40" />}>
         <FAQ />
-      </Suspense>
+      </Suspense> 
+      */}
 
       <Suspense fallback={<div className="h-20" />}>
         <Footer />
