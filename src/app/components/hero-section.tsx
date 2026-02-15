@@ -135,7 +135,7 @@ export function HeroSection() {
               {/* Main image */}
               <div className="relative rounded-3xl overflow-hidden" style={{ border: '2px solid rgba(255, 255, 255, 0.1)' }}>
                 <ImageWithFallback
-                  src="https://github.com/Neroxialapp/pixy-website/blob/0631ac60f5f5a969a68271541a4696efd53bedde/logo.png?raw=true"
+                  src="https://github.com/Neroxialapp/pixy-website/blob/main/logo.webp?raw=true"
                   alt="Pixy AI"
                   className="w-full h-auto"
                 />
