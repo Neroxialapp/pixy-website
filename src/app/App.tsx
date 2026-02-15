@@ -4,8 +4,8 @@ import { HeroSection } from "./components/hero-section";
 
 // Eğer aşağıdaki 3'ünde hata alırsan süslü parantezleri { } silip dene.
 // Örnek: import Features from "./components/features-section";
-import { Features } from "./components/features-section";
-import { Testimonials } from "./components/testimonials-section";
+import { FeaturesSection } from "./components/features-section";
+import { TestimonialsSection } from "./components/testimonials-section";
 import { Footer } from "./components/footer";
 
 function App() {
