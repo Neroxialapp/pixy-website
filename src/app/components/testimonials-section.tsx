@@ -25,7 +25,7 @@ const testimonials = [
   },
 ];
 
-export function TestimonialsSection() {
+export default function TestimonialsSection() {
   return (
     <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
