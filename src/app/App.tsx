@@ -8,6 +8,7 @@ import { Footer } from './components/footer';
 export default function App() {
   return (
     <div className="min-h-screen">
+      <HeroSection />
       <FeaturesSection />
       <HowItWorksSection />
       <TestimonialsSection />
