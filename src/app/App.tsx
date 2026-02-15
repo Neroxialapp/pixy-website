@@ -1,13 +1,12 @@
-// DİKKAT: Süslü parantezleri { } kaldırdık. 
-// Artık "Default Import" yapıyoruz.
+// Lazy load falan yok, dümdüz import ediyoruz.
+// HeroSection kodunu gördüğüm için { } kullandım.
+import { HeroSection } from "./components/hero-section";
 
-import { HeroSection } from './components/hero-section';
-import Features from './components/features-section';
-import Testimonials from './components/testimonials-section';
-import Footer from './components/footer';
-
-// Eğer "How It Works" eklemek istersen:
-// import HowItWorks from './components/how-it-works-section';
+// Eğer aşağıdaki 3'ünde hata alırsan süslü parantezleri { } silip dene.
+// Örnek: import Features from "./components/features-section";
+import { Features } from "./components/features-section";
+import { Testimonials } from "./components/testimonials-section";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
