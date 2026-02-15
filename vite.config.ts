@@ -14,18 +14,21 @@ export default defineConfig({
     },
   },
   build: {
-    // CSS parçalamayı aktif et
-    cssCodeSplit: true, 
+    target: 'esnext', // Modern tarayıcılar için optimize et
+    cssCodeSplit: true, // CSS'i parçala (Lazy load ile uyumlu çalışır)
     rollupOptions: {
       output: {
-        // Ağır kütüphaneleri ayırarak ana CSS'in şişmesini önle
-        manualChunks: {
-          'motion': ['motion/react'],
-          'vendor': ['react', 'react-dom'],
+        // Otomatik paketleme (Vendor splitting)
+        manualChunks(id) {
+          // React ve DOM kütüphanelerini ayrı bir dosyaya al
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor';
+          }
+          // Framer Motion çok büyükse onu ayır
+          if (id.includes('node_modules/motion')) {
+            return 'motion-vendor';
+          }
         },
-        assetFileNames: 'assets/[name]-[hash][extname]',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
       },
     },
   },
