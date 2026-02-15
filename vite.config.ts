@@ -3,6 +3,7 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -14,9 +15,12 @@ export default defineConfig({
     },
   },
   build: {
-    // Performans İyileştirmeleri
-    cssCodeSplit: true, // CSS'i sayfalara göre böler (Privacy ve Terms sayfaları ana CSS'i yüklemez)
-    cssMinify: 'lightningcss', // Daha hızlı ve verimli CSS sıkıştırma
+    // 1. CSS'i sayfalara göre böler, ana dosya yükünü hafifletir
+    cssCodeSplit: true,
+    // 2. Daha agresif ve modern bir CSS sıkıştırma kullanır
+    cssMinify: 'lightningcss',
+    // 3. Küçük resimleri/fontları base64 yaparak istek sayısını azaltır (4kb altı)
+    assetsInlineLimit: 4096,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
@@ -24,12 +28,19 @@ export default defineConfig({
         terms: path.resolve(__dirname, 'terms.html'),
       },
       output: {
-        // Dosya isimlerini daha düzenli hale getirir
+        // 4. Kütüphaneleri parçalara ayırarak ana (main) JS dosyasını küçültür
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['motion/react'],
+          'vendor-icons': ['lucide-react'],
+        },
+        // 5. Dosya isimlerine hash ekleyerek cache (önbellek) sorunlarını çözer
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
       },
     },
   },
+  // SVG ve CSV dosyalarını projeye dahil eder
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
