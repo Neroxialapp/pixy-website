@@ -5,20 +5,24 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
   resolve: {
     alias: {
-      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
-      privacy: resolve(__dirname, 'privacy.html'),
-      terms: resolve(__dirname, 'terms.html'),
     },
   },
-
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+  build: {
+    rollupOptions: {
+      input: {
+        // Ana giriş noktanız
+        main: path.resolve(__dirname, 'index.html'),
+        // Eklediğimiz yeni sayfalar
+        privacy: path.resolve(__dirname, 'privacy.html'),
+        terms: path.resolve(__dirname, 'terms.html'),
+      },
+    },
+  },
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
