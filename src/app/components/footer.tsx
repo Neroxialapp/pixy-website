@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Mail, Shield, FileText, Heart } from 'lucide-react';
 
-export default function Footer() {
+export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
