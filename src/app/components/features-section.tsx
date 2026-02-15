@@ -28,7 +28,7 @@ const features = [
   },
 ];
 
-export function FeaturesSection() {
+export default function FeaturesSection() {
   return (
     <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
       {/* Decorative elements */}
