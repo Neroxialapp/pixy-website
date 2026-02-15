@@ -6,6 +6,16 @@
     <meta name="google-site-verification" content="bbZJvELx4EK1fANlppTr-iRQbb7z4dIE0s8L91GLH34" />
     <link rel="icon" type="image/png" href="/favicon.png">
     <title>Pixy : AI Baby & Kid Routine</title>
+    <script>
+      // Bu script, Vite'ın oluşturduğu CSS'i bulur ve onu engellemesiz (non-blocking) hale getirir
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        links.forEach(link => {
+          link.media = 'print';
+          link.onload = () => { link.media = 'all'; };
+        });
+      });
+    </script>
     <meta name="description" content="Pixy: The smartest AI-powered baby and kid routine tracker. Predict sleep patterns, automate logging, and create magical bedtime experiences with artificial intelligence." />
 
     <link 
