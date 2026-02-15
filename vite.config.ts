@@ -14,6 +14,8 @@ export default defineConfig({
     alias: {
       // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
+      privacy: resolve(__dirname, 'privacy.html'),
+      terms: resolve(__dirname, 'terms.html'),
     },
   },
 
