@@ -12,8 +12,8 @@ function App() {
   return (
     <main className="min-h-screen bg-[#0a0e27] text-white overflow-x-hidden">
       <HeroSection />
-      <Features />
-      <Testimonials />
+      <FeaturesSection />
+      <TestimonialsSection />
       <Footer />
     </main>
   );
