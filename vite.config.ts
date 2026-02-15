@@ -15,12 +15,16 @@ export default defineConfig({
     },
   },
   build: {
-    // 1. CSS'i sayfalara göre böler, ana dosya yükünü hafifletir
-    cssCodeSplit: true,
-    // 2. Daha agresif ve modern bir CSS sıkıştırma kullanır
+    // 1. KRİTİK AYAR: 20KB altındaki CSS ve resimleri doğrudan JS içine gömer.
+    // Bu sayede "render-blocking css" hatası tamamen kalkar.
+    assetsInlineLimit: 25000, 
+    
+    // 2. CSS'i ayrı dosya yapma, ana JS dosyasına dahil et.
+    cssCodeSplit: false, 
+
+    // 3. Modern ve hızlı sıkıştırma.
     cssMinify: 'lightningcss',
-    // 3. Küçük resimleri/fontları base64 yaparak istek sayısını azaltır (4kb altı)
-    assetsInlineLimit: 4096,
+    
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
@@ -28,19 +32,19 @@ export default defineConfig({
         terms: path.resolve(__dirname, 'terms.html'),
       },
       output: {
-        // 4. Kütüphaneleri parçalara ayırarak ana (main) JS dosyasını küçültür
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-motion': ['motion/react'],
-          'vendor-icons': ['lucide-react'],
-        },
-        // 5. Dosya isimlerine hash ekleyerek cache (önbellek) sorunlarını çözer
+        // Dosya isimlerini hash'leyerek önbellek (cache) çakışmalarını önler
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
+        
+        // Kütüphaneleri parçalayarak ana dosya yükünü dengeler
+        manualChunks: {
+          'vendor-ui': ['react', 'react-dom'],
+          'vendor-animations': ['motion/react'],
+        }
       },
     },
   },
-  // SVG ve CSV dosyalarını projeye dahil eder
+  // SVG ve CSV dosyalarını tanımaya devam et
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
