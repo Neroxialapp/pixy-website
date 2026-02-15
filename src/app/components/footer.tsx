@@ -5,45 +5,6 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <> {/* <-- Bu boş etiketi mutlaka ekle */}
-    {/* Privacy ve Terms Bölümü */}
-    <section id="privacy" className="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
-      <div className="container mx-auto px-6 max-w-5xl grid md:grid-cols-2 gap-12 text-left">
-        
-        {/* Privacy Policy */}
-        <div className="scroll-mt-20">
-          <h2 className="text-2xl font-bold text-white mb-4">Privacy Policy</h2>
-          <p className="text-sm mb-4">Last Updated: February 14, 2026</p>
-          <div className="space-y-4 text-sm leading-relaxed">
-            <p>Pixy is designed for parents to track their baby's growth. We prioritize the security of your family's data.</p>
-            <h3 className="text-white font-semibold text-lg">1. Data Controller</h3>
-            <p>Managed by Pixy Development Team. Contact: support@pixykid.com</p>
-            <h3 className="text-white font-semibold text-lg">2. Data We Collect</h3>
-            <p>Account info, baby's growth data, logs (sleep, feeding), and usage analytics.</p>
-            <h3 className="text-white font-semibold text-lg">3. Third-Party Services</h3>
-            <p>We use Google Firebase, Google Gemini AI, and RevenueCat for secure infrastructure.</p>
-            <h3 className="text-white font-semibold text-lg">4. Account Deletion</h3>
-            <p>Users can delete all data via 'Settings &gt; Delete Account' within the app.</p>
-          </div>
-        </div>
-
-        {/* Terms of Service */}
-        <div id="terms" className="scroll-mt-20 border-t md:border-t-0 md:border-l border-slate-800 pt-8 md:pt-0 md:pl-12">
-          <h2 className="text-2xl font-bold text-white mb-4">Terms of Use (EULA)</h2>
-          <p className="text-sm mb-4">Last Updated: February 14, 2026</p>
-          <div className="space-y-4 text-sm leading-relaxed">
-            <div className="p-3 bg-red-900/20 border border-red-900/30 rounded text-red-200">
-              <h3 className="font-bold uppercase text-xs">Medical Disclaimer</h3>
-              <p>PIXY IS NOT A MEDICAL DEVICE. Suggestions are for informational purposes only. Consult a pediatrician for health concerns.</p>
-            </div>
-            <h3 className="text-white font-semibold text-lg">1. Subscriptions</h3>
-            <p>Payments are managed via Google Play Store. Subscriptions auto-renew unless cancelled in settings.</p>
-            <h3 className="text-white font-semibold text-lg">2. AI Generated Content</h3>
-            <p>AI stories and recipes are generated for entertainment. Use discretion regarding food allergies.</p>
-          </div>
-        </div>
-      </div>
-    </section>
     <footer className="relative py-16 overflow-hidden" style={{ background: 'var(--space-navy)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main Footer Content */}
@@ -79,10 +40,12 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-white" style={{ fontWeight: 700 }}>
               Legal
             </h4>
-            <ul className="space-y-3">
+           <ul className="space-y-3">
               <li>
                 <a 
-                  href="#privacy"
+                  href="/privacy"
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
                   style={{ color: 'var(--lavender-light)' }}
                 >
@@ -92,7 +55,9 @@ export function Footer() {
               </li>
               <li>
                 <a 
-                  href="#terms"
+                  href="/terms"
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
                   style={{ color: 'var(--lavender-light)' }}
                 >
@@ -100,17 +65,7 @@ export function Footer() {
                   <span>Terms of Service</span>
                 </a>
               </li>
-              <li>
-                <a 
-                  href="#security"
-                  className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
-                  style={{ color: 'var(--lavender-light)' }}
-                >
-                  <Shield className="w-4 h-4" />
-                  <span>Data Security</span>
-                </a>
-              </li>
-            </ul>
+          </ul>
           </motion.div>
 
           {/* Support Column */}
@@ -132,33 +87,6 @@ export function Footer() {
                 >
                   <Mail className="w-4 h-4" />
                   <span>support@pixykid.com</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#help"
-                  className="opacity-80 hover:opacity-100 transition-opacity"
-                  style={{ color: 'var(--lavender-light)' }}
-                >
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#faq"
-                  className="opacity-80 hover:opacity-100 transition-opacity"
-                  style={{ color: 'var(--lavender-light)' }}
-                >
-                  FAQs
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#contact"
-                  className="opacity-80 hover:opacity-100 transition-opacity"
-                  style={{ color: 'var(--lavender-light)' }}
-                >
-                  Contact Us
                 </a>
               </li>
             </ul>
@@ -214,6 +142,5 @@ export function Footer() {
       {/* Decorative gradient line at top */}
       <div className="absolute top-0 left-0 w-full h-1" style={{ background: 'linear-gradient(90deg, var(--soft-cyan) 0%, var(--lavender) 50%, var(--soft-cyan) 100%)', opacity: 0.5 }} />
     </footer>
-      </>
   );
 }
