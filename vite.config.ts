@@ -17,6 +17,11 @@ export default defineConfig({
     target: 'esnext', // Modern tarayıcılar için optimize et
     cssCodeSplit: true, // CSS'i parçala (Lazy load ile uyumlu çalışır)
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        privacy: path.resolve(__dirname, 'privacy.html'),
+        terms: path.resolve(__dirname, 'terms.html'),
+      },
       output: {
         // Otomatik paketleme (Vendor splitting)
         manualChunks(id) {
