@@ -85,7 +85,7 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href="https://play.google.com"
+                href="https://play.google.com/store/apps/details?id=com.pixykid.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl transition-all duration-300"
