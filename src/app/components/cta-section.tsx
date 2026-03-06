@@ -124,7 +124,7 @@ export function CTASection() {
               </motion.a>
 
               <motion.a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/tr/app/pixy-ai-parent-assistant/id6759738178"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl transition-all duration-300"
