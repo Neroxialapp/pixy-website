@@ -72,7 +72,7 @@ export function HeroSection() {
             </motion.div>
 
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight" style={{ color: 'white', fontWeight: 800 }}>
-              Pixy: AI Baby & Kid Routine
+              Pixy: AI Parent Assistant
             </h1>
 
             <p className="text-xl lg:text-2xl mb-8 leading-relaxed" style={{ color: 'var(--lavender-light)' }}>
